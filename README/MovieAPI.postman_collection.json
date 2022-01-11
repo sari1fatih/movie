@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "5d9e4a4a-a41a-4db5-8651-56269521646a",
+		"name": "MovieAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"subadmin@gmail.com\",\r\n    \"password\" :\"123\",\r\n    \"firstName\" :\"subadmin\",\r\n    \"lastName\":\"subadmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/Auth/Register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Auth",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"subadmin@gmail.com\",\r\n    \"password\" :\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/Auth/Login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Auth",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "GetList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/Categories/getList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Categories",
+								"getList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getbyid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/Categories/getbyid?categoryID=18",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Categories",
+								"getbyid"
+							],
+							"query": [
+								{
+									"key": "categoryID",
+									"value": "18"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJlbWFpbCI6InN1YmFkbWluQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdWJhZG1pbiBzdWJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJDYXRlZ29yeS5BZGQiLCJDYXRlZ29yeS5VcGRhdGUiLCJDYXRlZ29yeS5EZWxldGUiXSwibmJmIjoxNjQxODcxNjQ3LCJleHAiOjE5NTc0MDQ0NDcsImlzcyI6Ind3dy5mYXRpaHNhcmkuY29tIiwiYXVkIjoid3d3LmZhdGloc2FyaS5jb20ifQ.Wuy7AIvZUBX8CIP3Ocokcyoy-0cZ06Xv0h-UjPhW3dw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"CategoryName\": \"Sürükleyici\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/Categories/Add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Categories",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJlbWFpbCI6InN1YmFkbWluQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdWJhZG1pbiBzdWJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJDYXRlZ29yeS5BZGQiLCJDYXRlZ29yeS5VcGRhdGUiLCJDYXRlZ29yeS5EZWxldGUiXSwibmJmIjoxNjQxODcxNjQ3LCJleHAiOjE5NTc0MDQ0NDcsImlzcyI6Ind3dy5mYXRpaHNhcmkuY29tIiwiYXVkIjoid3d3LmZhdGloc2FyaS5jb20ifQ.Wuy7AIvZUBX8CIP3Ocokcyoy-0cZ06Xv0h-UjPhW3dw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n     \"Id\": 18,\r\n     \"CategoryName\": \"Sürükleyici1\"\r\n       \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/Categories/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Categories",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJlbWFpbCI6InN1YmFkbWluQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdWJhZG1pbiBzdWJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJDYXRlZ29yeS5BZGQiLCJDYXRlZ29yeS5VcGRhdGUiLCJDYXRlZ29yeS5EZWxldGUiXSwibmJmIjoxNjQxODcxNjQ3LCJleHAiOjE5NTc0MDQ0NDcsImlzcyI6Ind3dy5mYXRpaHNhcmkuY29tIiwiYXVkIjoid3d3LmZhdGloc2FyaS5jb20ifQ.Wuy7AIvZUBX8CIP3Ocokcyoy-0cZ06Xv0h-UjPhW3dw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"Id\": 21\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/Categories/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Categories",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "GetList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/Movies/getList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Movies",
+								"getList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getbyid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/Movies/getbyid?movieID=15",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Movies",
+								"getbyid"
+							],
+							"query": [
+								{
+									"key": "movieID",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJlbWFpbCI6InN1YmFkbWluQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdWJhZG1pbiBzdWJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJDYXRlZ29yeS5BZGQiLCJDYXRlZ29yeS5VcGRhdGUiLCJDYXRlZ29yeS5EZWxldGUiXSwibmJmIjoxNjQxODcxNjQ3LCJleHAiOjE5NTc0MDQ0NDcsImlzcyI6Ind3dy5mYXRpaHNhcmkuY29tIiwiYXVkIjoid3d3LmZhdGloc2FyaS5jb20ifQ.Wuy7AIvZUBX8CIP3Ocokcyoy-0cZ06Xv0h-UjPhW3dw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n  \"originalLanguage\": \"tr\",\r\n  \"originalTitle\": \"string\",\r\n  \"overview\": \"string\",\r\n  \"popularity\": 0,\r\n  \"releaseDate\": \"2022-01-10T01:57:26.601Z\",\r\n  \"title\": \"title\",\r\n  \"voteAverage\": 0,\r\n  \"voteCount\": 0\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/Movies/Add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Movies",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJlbWFpbCI6InN1YmFkbWluQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdWJhZG1pbiBzdWJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJDYXRlZ29yeS5BZGQiLCJDYXRlZ29yeS5VcGRhdGUiLCJDYXRlZ29yeS5EZWxldGUiXSwibmJmIjoxNjQxODcxNjQ3LCJleHAiOjE5NTc0MDQ0NDcsImlzcyI6Ind3dy5mYXRpaHNhcmkuY29tIiwiYXVkIjoid3d3LmZhdGloc2FyaS5jb20ifQ.Wuy7AIvZUBX8CIP3Ocokcyoy-0cZ06Xv0h-UjPhW3dw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n  \"Id\": 24,\r\n  \"originalLanguage\": \"tr\",\r\n  \"originalTitle\": \"112\",\r\n  \"overview\": \"222\",\r\n  \"popularity\": 0,\r\n  \"releaseDate\": \"2022-01-10T01:57:26.601Z\",\r\n  \"title\": \"string\",\r\n  \"voteAverage\": 0,\r\n  \"voteCount\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/Movies/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Movies",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJlbWFpbCI6InN1YmFkbWluQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJzdWJhZG1pbiBzdWJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6WyJDYXRlZ29yeS5BZGQiLCJDYXRlZ29yeS5VcGRhdGUiLCJDYXRlZ29yeS5EZWxldGUiXSwibmJmIjoxNjQxODcxNjQ3LCJleHAiOjE5NTc0MDQ0NDcsImlzcyI6Ind3dy5mYXRpaHNhcmkuY29tIiwiYXVkIjoid3d3LmZhdGloc2FyaS5jb20ifQ.Wuy7AIvZUBX8CIP3Ocokcyoy-0cZ06Xv0h-UjPhW3dw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"Id\": 24\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/Movies/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Movies",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
